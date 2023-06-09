@@ -10,6 +10,7 @@ import MovieReviewPage from "./pages/movieReviewPage";
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import MoviesContextProvider from "./contexts/moviesContext";
+import PopularActorsPage from "./pages/popularActorsPage"; // NEW
 import TopRatedMoviesPage from "./pages/topRatedMoviesPage"; // NEW
 import NowPlayingMoviesPage from "./pages/nowPlayingMoviesPage"; // NEW
 import TrendingMoviesPage from "./pages/trendingMoviesPage"; // NEW
@@ -59,6 +60,11 @@ const App = () => {
               exact
               path="/movies/upcoming"
               component={UpcomingMoviesPage}
+            />
+            <Route
+               exact 
+               path="/popular_actors" 
+               component={PopularActorsPage} 
             />
             <Route path="/movies/:id" component={MoviePage} />
             <Route exact path="/" component={HomePage} />
