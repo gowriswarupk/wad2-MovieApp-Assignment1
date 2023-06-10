@@ -26,6 +26,9 @@ const queryClient = new QueryClient({
   }
 });
 
+export const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
+
+
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>

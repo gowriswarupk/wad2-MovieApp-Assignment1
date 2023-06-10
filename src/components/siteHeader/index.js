@@ -10,8 +10,11 @@ import MenuIcon from "@material-ui/icons/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
 import { withRouter } from "react-router-dom";
-import { useTheme } from "@material-ui/core/styles";
+import { useTheme, ThemeProvider, createTheme } from '@mui/material/styles';
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { ColorModeContext } from '../../index.js';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -25,6 +28,7 @@ const SiteHeader = ({ history }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const theme = useTheme();
+  const colorMode = React.useContext(ColorModeContext);
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const menuOptions = [
@@ -35,6 +39,7 @@ const SiteHeader = ({ history }) => {
     { label: "Trending", path: "/movies/trending" },
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Popular Actors", path: "/popular_actors" }
+
   ];
 
   const handleMenuSelect = (pageURL) => {
@@ -55,6 +60,12 @@ const SiteHeader = ({ history }) => {
           <Typography variant="h6" className={classes.title}>
             All you ever wanted to know about Movies!
           </Typography>
+          
+          {/* Dark mode toggle button */}
+          <IconButton onClick={colorMode.toggleColorMode} color="inherit">
+            {theme.palette.mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
+          </IconButton>
+  
           {isMobile ? (
             <>
               <IconButton
