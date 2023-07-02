@@ -15,26 +15,52 @@ import TopRatedMoviesPage from "./pages/topRatedMoviesPage"; // NEW
 import NowPlayingMoviesPage from "./pages/nowPlayingMoviesPage"; // NEW
 import TrendingMoviesPage from "./pages/trendingMoviesPage"; // NEW
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage"; // NEW
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       staleTime: 360000,
       refetchInterval: 360000,
-      refetchOnWindowFocus: false
-    }
-  }
+      refetchOnWindowFocus: false,
+    },
+  },
 });
 
 export const ColorModeContext = React.createContext({ toggleColorMode: () => {} });
 
-
 const App = () => {
+  const [mode, setMode] = React.useState('light');
+
+const colorMode = React.useMemo(
+  () => ({
+    toggleColorMode: () => {
+      setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'));
+    },
+  }),
+  [],
+);
+
+const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode,
+        },
+      }),
+    [mode],
+  );
+
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
-        <SiteHeader />
-        <MoviesContextProvider>
+        <ColorModeContext.Provider value={colorMode}>
+          <ThemeProvider theme={theme}>
+            <CssBaseline /> 
+            <SiteHeader />
+            <MoviesContextProvider>
           {" "}
           <Switch>
             <Route exact path="/reviews/form" component={AddMovieReviewPage} />
@@ -74,6 +100,8 @@ const App = () => {
             <Redirect from="*" to="/" />
           </Switch>
         </MoviesContextProvider>
+        </ThemeProvider>
+        </ColorModeContext.Provider>
       </BrowserRouter>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
