@@ -14,8 +14,8 @@ A simple MOVIEAPP ReactJS App is developed using TMDB API.
 - Popular Actors Page
 - Pagination
 - Dark mode toggle
-- Firebase auth (attempted)
-- Protected route code implementation (attempted)
+- Firebase auth (attempted) (visible code in secondary branch)
+- Protected route code implementation (attempted) (visible code in secondary branch)
 
 ## Setup requirements.
 
@@ -25,7 +25,7 @@ Once repo is cloned, user will have to create a .env file in the src folder with
 REACT_APP_TMDB_KEY = <enter value here>
 ```
 
-once completed, the application can be setup by running 
+once completed, the application can be setup by running (npm version in project: 9.6.3) 
 ```
 npm install
 ```
@@ -44,7 +44,6 @@ to run the application,
 - Movies Trending
 - Movie actors page
 - Popular Actors Page
-- Pagination (upto 10 pages)
   
 
 ## App Design.
@@ -61,6 +60,19 @@ Dark theme in focus
 
 <img width="1680" alt="image" src="https://github.com/gowriswarupk/wad2-MovieApp-Assignment1/assets/58232821/d450dd85-e771-4969-8095-a75588bfa7c5">
 various routing options displayed such at Trending, Upcoming, Favourites, etc.
+
+<img width="1680" alt="image" src="https://github.com/gowriswarupk/wad2-MovieApp-Assignment1/assets/58232821/4e2a85f1-7a10-4f9b-b98c-9054f15ca223">
+Favorites Page (with couple of movies selected)
+
+<img width="1679" alt="image" src="https://github.com/gowriswarupk/wad2-MovieApp-Assignment1/assets/58232821/ddb13a7d-01e9-4320-b900-459febfb7944">
+Add review page in focus
+
+<img width="1680" alt="image" src="https://github.com/gowriswarupk/wad2-MovieApp-Assignment1/assets/58232821/578b5bab-29a1-48ec-899e-4c6c8589dbbf">
+Movies info in focus
+
+<img width="1680" alt="image" src="https://github.com/gowriswarupk/wad2-MovieApp-Assignment1/assets/58232821/6d315335-fcac-443c-b19d-a4ec9224bf29">
+Review excerpts in focus
+
 
 
 ### Routing.
@@ -81,10 +93,8 @@ various routing options displayed such at Trending, Upcoming, Favourites, etc.
 
 
 
-[If relevant, state what aspects of your app are protected (i.e. require authentication) and what is public.]
-
 Protected routes attempted along with firebase authentication, breaking changes, therefore had to rollback. code is still available in second branch for review.
 
 ## Independent learning (If relevant).
 
-Firebase Authentication had been attempted after last two years of implementing the same successfully for other projects as well. asmy Fourth year project, as it led me to gain some confidence in my abilities. Further self-learning was applied after reviewing tmdb api endpoints, and identifying ways to implement the same. 
+Firebase Authentication had been attempted after last two years of implementing the same successfully for other projects as well as my Fourth year project, as it led me to gain some confidence in my abilities. Further self-learning was applied after reviewing tmdb api endpoints, and identifying ways to implement the same. 
