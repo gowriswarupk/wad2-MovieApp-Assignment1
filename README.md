@@ -98,3 +98,5 @@ Protected routes attempted along with firebase authentication, breaking changes,
 ## Independent learning (If relevant).
 
 Firebase Authentication had been attempted after last two years of implementing the same successfully for other projects as well as my Fourth year project, as it led me to gain some confidence in my abilities. Further self-learning was applied after reviewing tmdb api endpoints, and identifying ways to implement the same. 
+
+Additional endpoints from TMDB API documentaion, as well as Material UI Documentation for icons/dark theme implemented
